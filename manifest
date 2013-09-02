@@ -1,0 +1,18 @@
+#
+# this is your module manifest and used by Titanium
+# during compilation, packaging, distribution, etc.
+#
+version: 0.1
+apiversion: 2
+description: Camera Image height and width modify
+author: naotaro
+license: MIT
+copyright: Copyright (c) 2013 by Your Company
+
+
+# these should not be edited
+name: InvertCameraModule
+moduleid: jp.simplecode.InvertCameraModule
+guid: cbb8801f-af4f-446a-b728-a765db8a1c4e
+platform: android
+minsdk: 3.1.0.GA

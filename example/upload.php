@@ -1,4 +1,6 @@
 <?php
+// 保存先のディレクトリのアクセス権変更を忘れないこと！
+// apacheに権限を与えるか、imagesフォルダを777
 // 画像保存先のディレクトリ
 $save_dir ="images/";
 
@@ -9,7 +11,11 @@ if(!isset($_FILES)){
 }elseif(!isset($_FILES["media"]["name"])){
     $json = "{\"error\":\"files_media_name\"}";
 }else{
-    $fname = $_FILES['media']['name'];
+    // 拡張子取得
+    $type = explode(".",$fname);
+    if($type[1] == "txt"){
+        $fname = $type[0].".jpg";
+    }
     $target_path = $save_dir . $fname;
     // アップロードファイルの保存
     if(!move_uploaded_file($_FILES['media']['tmp_name'],$target_path)){
